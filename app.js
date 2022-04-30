@@ -17,3 +17,23 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(cors(corsOptions));
+
+
+// Set public folder
+app.use('/', express.static('public/'));
+
+
+app.get('/login', (req, res) => {
+    res.sendFile('pages/index.html', {root: __dirname })
+})
+
+app.post('/login', (req, res) => {
+    console.log(req.body);
+
+})
+
+
+
+app.listen(PORT, ()=>{
+    console.log(`Server is running and listening on port ${PORT}`);
+})
