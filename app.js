@@ -45,11 +45,12 @@ app.post('/login', (req, res) => {
     if(errors){
 
         /**
-         * Resubmit form and display the errors in a flash(popup) message
+         * Resubmit form and display the errors in a flash(popup) messages
          */
 
-        
+
         console.log(errors)
+        res.sendStatus(500).send('Wrong form inputs!')
     } else{
 
         /**
